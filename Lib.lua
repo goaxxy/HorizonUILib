@@ -132,7 +132,7 @@ do
         return notif
     end
 
-    local ScreenGui = copyref(Instance.new("ScreenGui", gethui()))
+    local ScreenGui = cloneref(Instance.new("ScreenGui", gethui()))
 
     ScreenGui.DisplayOrder = 1000
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
