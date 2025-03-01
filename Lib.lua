@@ -112,9 +112,13 @@ do
         notif.Container = NewIndex
 
         function notif:remove()
+            print("test")
             table.remove(Lib.Notifications, table.find(Lib.Notifications, notif))
+            table.foreach(Lib.Notifications, print)
             task.wait(0.5)
+            print(NewIndex)
             NewIndex:Destroy()
+            print(NewIndex)
             table.foreach(Lib.Notifications, print)
         end
 
