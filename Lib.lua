@@ -104,8 +104,8 @@ do
         local notif = {Objects = {}, Container = nil}
 
         local NewIndex = Instance.new("TextLabel")
-        NewIndex.Size = UDim2.new(0,20,0,20)
-        NewIndex.Position = UDim2.new(0,20,0,20)
+        NewIndex.Size = UDim2.new(0,0,0,0)
+        NewIndex.Position = UDim2.new(0.5,0,0.5,0)
         NewIndex.Text = msg
         notif.Container = NewIndex
 
@@ -119,11 +119,11 @@ do
         end)
 
         task.spawn(function()
-            TweenService:Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0,1,0,1)}):Play()
+            TweenService:Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.3,0,0.3,0)}):Play()
 
             task.wait(dur)
 
-            TweenService:Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0,20,0,20)}):Play()
+            TweenService:Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0,0,0,0)}):Play()
         end)
 
         table.insert(Lib.Notifications, notif)
