@@ -117,6 +117,7 @@ do
 
         task.delay(dur + 0.1,function()
             remove(notif)
+            task.wait(0.5)
             NewIndex:Destroy()
         end)
 
