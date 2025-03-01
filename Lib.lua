@@ -107,9 +107,10 @@ do
         NewIndex.Size = UDim2.new(0,20,0,20)
         NewIndex.Position = UDim2.new(0,20,0,20)
         NewIndex.Text = msg
+        notif.Container = NewIndex
 
         function remove(item)
-            table.remove(Lib.Notifications, notif)
+            table.remove(Lib.Notifications, table.find(Lib.Notifications, notif))
         end
 
         task.delay(dur + 0.1,function()
