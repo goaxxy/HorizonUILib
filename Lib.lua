@@ -107,6 +107,7 @@ do
         local NewIndex = Instance.new("TextLabel")
         NewIndex.Size = UDim2.new(0,0,0,0)
         --NewIndex.Position = UDim2.new(0.5,0,0.5,0)
+        NewInd.Parent = Lib.ScreenGui
         NewIndex.Text = msg
         notif.Container = NewIndex
 
@@ -120,15 +121,14 @@ do
         end)
 
         task.spawn(function()
-            TweenService:Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.3,0,0.3,0)}):Play()
+            game:GetService("TweenService"):Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.3,0,0.3,0)}):Play()
 
             task.wait(dur)
 
-            TweenService:Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0,0,0,0)}):Play()
+            game:GetService("TweenService"):Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0,0,0,0)}):Play()
         end)
 
         table.insert(Lib.Notifications, notif)
-        notif.Parent = Lib.ScreenGui
         return notif
     end
 
