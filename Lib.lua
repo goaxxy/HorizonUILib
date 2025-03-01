@@ -111,15 +111,11 @@ do
         NewIndex.Text = msg
         notif.Container = NewIndex
 
-        function notif:remove(item)
+        function notif:remove()
             table.remove(Lib.Notifications, table.find(Lib.Notifications, notif))
             task.wait(0.5)
             NewIndex:Destroy()
         end
-
-        task.delay(dur + 0.1,function()
-            notif:remove(notif)
-        end)
 
         task.spawn(function()
             game:GetService("TweenService"):Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.3,0,0.3,0)}):Play()
@@ -127,6 +123,10 @@ do
             task.wait(dur)
 
             game:GetService("TweenService"):Create(NewIndex, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0,0,0,0)}):Play()
+        end)
+
+        task.delay(dur + 0.1,function()
+            notif:remove(notif)
         end)
 
         table.insert(Lib.Notifications, notif)
