@@ -47,6 +47,7 @@ do
             [Enum.KeyCode.LeftControl] = "LCtrl",
             [Enum.KeyCode.RightControl] = "RCtrl",
         },
+        ScreenGui = nil,
         Main = nil,
         FontSize = 14,
         UIOpenKey = Enum.KeyCode.RightShift,
@@ -127,8 +128,16 @@ do
         end)
 
         table.insert(Lib.Notifications, notif)
+        notif.Parent = Lib.ScreenGui
         return notif
     end
+
+    local ScreenGui = copyref(Instance.new("ScreenGui", gethui()))
+
+    ScreenGui.DisplayOrder = 1000
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    Lib.ScreenGui = ScreenGui
 end
 
 return Lib
