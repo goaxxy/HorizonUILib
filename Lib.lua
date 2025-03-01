@@ -106,7 +106,7 @@ do
         local NewIndex = Instance.new("TextLabel")
         NewIndex.Size = UDim2.new(0,20,0,20)
         NewIndex.Position = UDim2.new(0,20,0,20)
-        NewIndex.Text = message
+        NewIndex.Text = msg
 
         function remove(item)
             table.remove(Lib.Notifications, notif)
