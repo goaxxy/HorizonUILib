@@ -107,7 +107,7 @@ do
         local NewIndex = Instance.new("TextLabel")
         NewIndex.Size = UDim2.new(0,0,0,0)
         --NewIndex.Position = UDim2.new(0.5,0,0.5,0)
-        NewInd.Parent = Lib.ScreenGui
+        NewIndex.Parent = Lib.ScreenGui
         NewIndex.Text = msg
         notif.Container = NewIndex
 
