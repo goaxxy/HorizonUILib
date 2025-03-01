@@ -111,14 +111,14 @@ do
         NewIndex.Text = msg
         notif.Container = NewIndex
 
-        function remove(item)
+        function notification:remove(item)
             table.remove(Lib.Notifications, table.find(Lib.Notifications, notif))
+            task.wait(0.5)
+            NewIndex:Destroy()
         end
 
         task.delay(dur + 0.1,function()
-            remove(notif)
-            task.wait(0.5)
-            NewIndex:Destroy()
+            notification:remove(notif)
         end)
 
         task.spawn(function()
