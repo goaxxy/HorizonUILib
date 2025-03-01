@@ -115,6 +115,7 @@ do
             table.remove(Lib.Notifications, table.find(Lib.Notifications, notif))
             task.wait(0.5)
             NewIndex:Destroy()
+            table.foreach(Lib.Notifications, print)
         end
 
         task.spawn(function()
@@ -126,7 +127,7 @@ do
         end)
 
         task.delay(dur + 0.1,function()
-            notif:remove(notif)
+            notif:remove()
         end)
 
         table.insert(Lib.Notifications, notif)
